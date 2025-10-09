@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
-df = pd.read_csv("spaceship-titanic/train.csv")
+df = pd.read_csv("C:/Users/user/PycharmProjects/AILabs/Lab1/spaceship-titanic/train.csv")
 df.info()
 df.dtypes
 print(df.head(100))
