@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
-df = pd.read_csv("C:/Users/user/PycharmProjects/AILabs/Lab1/spaceship-titanic/test.csv")
+df = pd.read_csv("C:/Users/user/PycharmProjects/AILabs/Lab1/spaceship-titanic/train.csv")
 df.info()
 df.dtypes
 print(df.head(100))
@@ -43,4 +43,4 @@ nan_matrix = df.isnull()
 print(nan_matrix.sum())
 
 scaler = MinMaxScaler()
-scaler.fit(df['Age'])
+df['Age'] = scaler.fit_transform(df[['Age']])
