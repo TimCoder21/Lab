@@ -12,4 +12,4 @@ print(nan_matrix.sum())
 nan_matrix = df.isnull()
 
 cabin_mode = df['Cabin'].mode()[0]
-df['Cabin'].fillna(cabin_mode)
+df['Cabin'].fillna(cabin_mode, inplace=True)
