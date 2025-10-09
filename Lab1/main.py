@@ -63,4 +63,3 @@ df = pd.get_dummies(df, columns=['VIP'], drop_first=True)
 df = pd.get_dummies(df, columns=['Name'], drop_first=True)
 
 df.to_csv("processed_titanic.csv", index=False)
-//
