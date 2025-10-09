@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
-df = pd.read_csv("C:/Users/user/PycharmProjects/AILabs/Lab1/spaceship-titanic/train.csv")
+df = pd.read_csv("spaceship-titanic/train.csv")
 df.info()
 df.dtypes
 print(df.head(100))
@@ -44,3 +44,22 @@ print(nan_matrix.sum())
 
 scaler = MinMaxScaler()
 df['Age'] = scaler.fit_transform(df[['Age']])
+scaler = MinMaxScaler()
+df['RoomService'] = scaler.fit_transform(df[['RoomService']])
+scaler = MinMaxScaler()
+df['FoodCourt'] = scaler.fit_transform(df[['FoodCourt']])
+scaler = StandardScaler()
+df['ShoppingMall'] = scaler.fit_transform(df[['ShoppingMall']])
+scaler = StandardScaler()
+df['Spa'] = scaler.fit_transform(df[['Spa']])
+scaler = StandardScaler()
+df['VRDeck'] = scaler.fit_transform(df[['VRDeck']])
+
+df = pd.get_dummies(df, columns=['HomePlanet'], drop_first=True)
+df = pd.get_dummies(df, columns=['CryoSleep'], drop_first=True)
+df = pd.get_dummies(df, columns=['Cabin'], drop_first=True)
+df = pd.get_dummies(df, columns=['Destination'], drop_first=True)
+df = pd.get_dummies(df, columns=['VIP'], drop_first=True)
+df = pd.get_dummies(df, columns=['Name'], drop_first=True)
+
+df.to_csv("processed_titanic.csv", index=False)
