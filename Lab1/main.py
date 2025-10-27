@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
+from sklearn.preprocessing import MinMaxScaler
 
 df = pd.read_csv("C:/Users/user/PycharmProjects/AILabs/Lab1/spaceship-titanic/train.csv")
 df.info()
@@ -46,17 +46,17 @@ scaler = MinMaxScaler()
 df['RoomService'] = scaler.fit_transform(df[['RoomService']])
 scaler = MinMaxScaler()
 df['FoodCourt'] = scaler.fit_transform(df[['FoodCourt']])
-scaler = StandardScaler()
+scaler = MinMaxScaler()
 df['ShoppingMall'] = scaler.fit_transform(df[['ShoppingMall']])
-scaler = StandardScaler()
+scaler = MinMaxScaler()
 df['Spa'] = scaler.fit_transform(df[['Spa']])
-scaler = StandardScaler()
+scaler = MinMaxScaler()
 df['VRDeck'] = scaler.fit_transform(df[['VRDeck']])
 
 #df = pd.get_dummies(df, columns=['HomePlanet'], drop_first=True)
 #df = pd.get_dummies(df, columns=['Cabin'], drop_first=True)
 #df = pd.get_dummies(df, columns=['Destination'], drop_first=True)
-df = pd.get_dummies(df, columns=['Name'], drop_first=True)
+#df = pd.get_dummies(df, columns=['Name'], drop_first=True)
 
 df.drop('VRDeck', axis='columns', inplace= True)
 df.drop('ShoppingMall', axis='columns', inplace= True)
