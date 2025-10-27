@@ -16,8 +16,8 @@ age_median = df['Age'].median()
 food_median = df['FoodCourt'].median()
 shopping_median = df['ShoppingMall'].median()
 vip_mean = df['VIP'].mean()
-spa_mean = df['Spa'].mean()
-vrdeck_mean = df['VRDeck'].mean()
+spa_median = df['Spa'].median()
+vrdeck_median = df['VRDeck'].median()
 cabin_mode = df['Cabin'].mode()[0]
 planet_mode = df['HomePlanet'].mode()[0]
 sleep_mean = df['CryoSleep'].mean
@@ -34,8 +34,8 @@ df.fillna({'Age':age_median}, inplace=True)
 df.fillna({'ShoppingMall': shopping_median}, inplace=True)
 df.fillna({'FoodCourt':food_median}, inplace=True)
 df.fillna({'VIP':vip_mean}, inplace=True)
-df.fillna({'Spa':spa_mean}, inplace=True)
-df.fillna({'VRDeck':vrdeck_mean}, inplace=True)
+df.fillna({'Spa':spa_median}, inplace=True)
+df.fillna({'VRDeck':vrdeck_median}, inplace=True)
 
 nan_matrix = df.isnull()
 print(nan_matrix.sum())
